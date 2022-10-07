@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest      # job runs on which OS
     steps:          # jobs have multiple steps
       - name: echo a string         # '-' denotes array element ------ So this is first array element which has two "key: value" pairs (1. name: value, 2. run: value(i.e. command, below line))
-        run: echo "Hello World"     # this command will run because of 'run:'
+        run: eccho "Hello World"     # this command will run because of 'run:'
       - name: multiline script
         run: |
           node -v
