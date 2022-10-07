@@ -20,7 +20,7 @@ jobs:
       - name: python command
         run: |
           import platform
-          print(platform.preprocessor())
+          print(platform.processor())
         shell: python
 
 
