@@ -1,0 +1,20 @@
+name: Shell Commands        #Name for entire workflow
+
+
+#define events
+on: [push]    #name of event is 'push' ----> when push commands executes the following things happen --- more commands can be inserted---- [push, pull_request]
+
+# for each workflow we can have one or more jobs
+# jobs can be defined by 'jobs:' key
+
+jobs:
+  run-shell-command:
+    runs-on: ubuntu-latest      # job runs on which OS
+    steps:          # jobs have multiple steps
+      - name: echo a string         # '-' denotes array element ------ So this is first array element which has two "key: value" pairs (1. name: value, 2. run: value(i.e. command, below line))
+        run: echo "Hello World"     # this command will run because of 'run:'
+      - name: multiline script
+        run: |
+          node -v
+          npm -v 
+
