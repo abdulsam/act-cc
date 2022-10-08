@@ -1,0 +1,16 @@
+name: Actions workflow
+
+on: [push]      #triggers this workflow on push
+
+jobs:
+  run-github-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Simple JS Action
+        id: greet
+        uses: actions/hello-world-javascript-action@v1                    # It takes reference to an action (reference: to action in current directory or to a public repository on GitHub)
+                                             #here @v1 is version of actions/hello-world-javascript-action
+        with:                #we provide input to an action with "with:"
+          who-to-greet: Shaikh Abdus Samad      #"who-to-greet" is input key from https://github.com/actions/hello-world-javascript-action 
+      - name: Log Greeating Time
+        run: echo "${{ steps.greet.outputs.time }}"
